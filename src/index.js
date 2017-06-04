@@ -31,7 +31,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.zipWith
+   * @function module:fun-singly-linked-list.zipWith
    *
    * @param {Function} f - (*, *) -> *
    * @param {List} a - first list
@@ -53,7 +53,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.equal
+   * @function module:fun-singly-linked-list.equal
    *
    * @param {List} a - first list
    * @param {List} b - second list
@@ -67,7 +67,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.append
+   * @function module:fun-singly-linked-list.append
    *
    * @param {*} value - to append
    * @param {List} list - to append to
@@ -89,7 +89,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.prepend
+   * @function module:fun-singly-linked-list.prepend
    *
    * @param {*} value - to prepend
    * @param {List} list - to prepend to
@@ -102,7 +102,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.reverse
+   * @function module:fun-singly-linked-list.reverse
    *
    * @param {List} list - to prepend to
    *
@@ -121,7 +121,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.length
+   * @function module:fun-singly-linked-list.length
    *
    * @param {List} list - to measure
    *
@@ -133,7 +133,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.fold
+   * @function module:fun-singly-linked-list.fold
    *
    * @param {Function} combine - (*, *) -> *
    * @param {*} init - initial value for combine
@@ -147,7 +147,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.toArray
+   * @function module:fun-singly-linked-list.toArray
    *
    * @param {List} list - to convert
    *
@@ -166,7 +166,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.of
+   * @function module:fun-singly-linked-list.of
    *
    * @param {*} value - to put in a new list
    *
@@ -178,7 +178,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.forEach
+   * @function module:fun-singly-linked-list.forEach
    *
    * @param {Function} f - to put in a new list
    * @param {List} list - source of elements to call f on
@@ -189,7 +189,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.forEachNode
+   * @function module:fun-singly-linked-list.forEachNode
    *
    * @param {Function} f - to put in a new list
    * @param {List} list - source of nodes to call f on
@@ -203,7 +203,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.concat
+   * @function module:fun-singly-linked-list.concat
    *
    * @param {List} a - first list
    * @param {List} b - second list
@@ -225,7 +225,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.copy
+   * @function module:fun-singly-linked-list.copy
    *
    * @param {List} list - to copy
    *
@@ -237,7 +237,7 @@
 
   /**
    *
-   * @function fun-singly-linked-list.map
+   * @function module:fun-singly-linked-list.map
    *
    * @param {Function} f - function to map over list
    * @param {List} list - to map f over
