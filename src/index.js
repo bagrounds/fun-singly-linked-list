@@ -10,9 +10,41 @@
   var object = require('fun-object')
   var scalar = require('fun-scalar')
   var predicate = require('fun-predicate')
+  var guarded = require('guarded')
 
-  /* exports */
-  module.exports = {
+  var NODE = '{ value: *, next: Maybe { value: *, ... } }'
+
+  var any = predicate.t
+  var fromFunNode = predicate.type('(Function, ' + NODE + ')')
+  var fromFunNodeNode = predicate.type('(Function, ' + NODE + ', ' + NODE + ')')
+  var fromFunAnyNode = predicate.type('(Function, *, ' + NODE + ')')
+  var fromAnyNode = predicate.type('(*, ' + NODE + ')')
+  var fromNodeNode = predicate.type('(' + NODE + ', ' + NODE + ')')
+  var fromNode = predicate.type('(' + NODE + ')')
+
+  var toNode = predicate.type(NODE)
+  var toArr = predicate.type('Array')
+  var toNumber = predicate.type('Number')
+  var toBool = predicate.type('Boolean')
+
+  var guards = {
+    of: guarded(any, toNode),
+    forEach: guarded(fromFunNode, any),
+    forEachNode: guarded(fromFunNode, any),
+    map: guarded(fromFunNode, toNode),
+    concat: guarded(fromNodeNode, toNode),
+    copy: guarded(fromNode, toNode),
+    toArray: guarded(fromNode, toArr),
+    fold: guarded(fromFunAnyNode, any),
+    length: guarded(fromNode, toNumber),
+    reverse: guarded(fromNode, toNode),
+    prepend: guarded(fromAnyNode, toNode),
+    append: guarded(fromAnyNode, toNode),
+    equal: guarded(fromNodeNode, toBool),
+    zipWith: guarded(fromFunNodeNode, toNode)
+  }
+
+  var api = {
     of: of,
     forEach: forEach,
     forEachNode: forEachNode,
@@ -28,6 +60,10 @@
     equal: equal,
     zipWith: zipWith
   }
+
+  /* exports */
+  module.exports = object.map(fn.curry, object.ap(guards, api))
+  module.exports.raw = api
 
   /**
    *
