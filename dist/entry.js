@@ -1,0 +1,2 @@
+funSinglyLinkedList = require('../src')
+
